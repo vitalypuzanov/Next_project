@@ -1,0 +1,65 @@
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 100;
+}
+
+.footer_contact_numbers {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_logo_social {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_logo_social img {
+  width: 30px;
+}
+.footer_logo_social_item {
+  padding-left: 10px;
+  width: 50px;
+}
+
+.footer_logo_social {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.footer_contact_numbers_item {
+  margin-top: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.footer_nav {
+  cursor: pointer;
+}
+
+.footer_nav p {
+  position: relative;
+  color: black;
+  cursor: pointer;
+}
+
+.footer_nav p::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 1px;
+  width: 0%;
+  left: 0%;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.footer_nav p:hover:after {
+  width: 100%;
+}
