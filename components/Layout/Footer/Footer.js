@@ -8,7 +8,9 @@ function Footer() {
     <div className={classes.footer}>
       <div class={classes.footer_logo}>
         <div className={classes.footer_logo_main}>
-          <h1>Logotype</h1>
+          <div>
+            <h1>Logotype</h1>
+          </div>
         </div>
         <div className={classes.footer_logo_social}>
           <Link href="instagram.com">
@@ -25,7 +27,9 @@ function Footer() {
 
       <div className={classes.footer_contact}>
         <div className={classes.footer_contact_title}>
-          <h3>СЛУЖБА ЗАБОТ</h3>
+          <div>
+            <h3>СЛУЖБА ЗАБОТ</h3>
+          </div>
         </div>
         <div className={classes.footer_contact_numbers}>
           <a
@@ -67,47 +71,59 @@ function Footer() {
         </div>
       </div>
 
-      <div className={classes.footer_nav}>
-        <h3>ПОКУПАТЕЛЯМ</h3>
-        <Link href="/mens">
-          <p>Доставка</p>
-        </Link>
-        <Link href="/mens">
-          <p>Оплата</p>
-        </Link>
-        <Link href="/mens">
-          <p>Возврат</p>
-        </Link>
-        <Link href="/mens">
-          <p>Частые вопросы</p>
-        </Link>
-      </div>
+      <nav className={classes.footer_nav}>
+        <div>
+          <h3>ПОКУПАТЕЛЯМ</h3>
+        </div>
+        <ul>
+          <Link href="/mens">
+            <li>Доставка</li>
+          </Link>
+          <Link href="/mens">
+            <li>Оплата</li>
+          </Link>
+          <Link href="/mens">
+            <li>Возврат</li>
+          </Link>
+          <Link href="/mens">
+            <li>Частые вопросы</li>
+          </Link>
+        </ul>
+      </nav>
 
-      <div className={classes.footer_nav}>
-        <h3>КОМПАНИЯ</h3>
-        <Link href="/mens">
-          <p>О нас</p>
-        </Link>
-        <Link href="/mens">
-          <p>Концепт</p>
-        </Link>
-        <Link href="/mens">
-          <p>Сотруднечество</p>
-        </Link>
-        <Link href="/mens">
-          <p>Контакты</p>
-        </Link>
-      </div>
+      <nav className={classes.footer_nav}>
+        <div>
+          <h3>КОМПАНИЯ</h3>
+        </div>
+        <ul>
+          <Link href="/mens">
+            <li>О нас</li>
+          </Link>
+          <Link href="/mens">
+            <li>Концепт</li>
+          </Link>
+          <Link href="/mens">
+            <li>Сотруднечество</li>
+          </Link>
+          <Link href="/mens">
+            <li>Контакты</li>
+          </Link>
+        </ul>
+      </nav>
 
-      <div className={classes.footer_nav}>
-        <h3>ПРАВОВАЯ ИНФОРМАЦИЯ</h3>
-        <Link href="/mens">
-          <p>Оферта</p>
-        </Link>
-        <Link href="/mens">
-          <p>Обработка личных</p>
-        </Link>
-      </div>
+      <nav className={classes.footer_nav}>
+        <div>
+          <h3>ПРАВОВАЯ ИНФОРМАЦИЯ</h3>
+        </div>
+        <ul>
+          <Link href="/mens">
+            <li>Оферта</li>
+          </Link>
+          <Link href="/mens">
+            <li>Обработка личных</li>
+          </Link>
+        </ul>
+      </nav>
     </div>
   );
 }

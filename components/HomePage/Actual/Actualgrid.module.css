@@ -1,0 +1,12 @@
+.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 50px 0px;
+}
+
+.h2 {
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+.nav_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 50px;
+}
+.nav_search {
+  padding: 0 25px 0 0;
+}
+
+.nav_search input[type='text'] {
+  height: 50px;
+  float: right;
+  padding: 0 50px 0 0;
+  border: none;
+  font-size: 17px;
+}

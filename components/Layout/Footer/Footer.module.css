@@ -1,7 +1,8 @@
 .footer {
+  flex-wrap: wrap;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  /* bottom: 0; */
   height: 100px;
   display: flex;
   flex-direction: row;
@@ -41,25 +42,33 @@
 }
 
 .footer_nav {
+  padding-bottom: 20px;
   cursor: pointer;
 }
+.footer_nav ul {
+  padding-left: 0;
+}
 
-.footer_nav p {
+.footer_nav li {
   position: relative;
   color: black;
   cursor: pointer;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 5px 0 5px 0;
+  align-items: start;
 }
 
-.footer_nav p::after {
+.footer_nav li::after {
   content: '';
   position: absolute;
   background-color: black;
   height: 1px;
   width: 0%;
   left: 0%;
-  bottom: -10px;
+  bottom: 0px;
   transition: 0.3s;
 }
-.footer_nav p:hover:after {
+.footer_nav li:hover:after {
   width: 100%;
 }

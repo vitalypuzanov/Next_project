@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.ditails_title {
+  text-align: left;
+}
+
+.ditails {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 70px;
+  /* justify-content: start;
+  align-items: flex-start; */
+}
+
+.ditails:first-child {
+  margin-top: 20;
+}

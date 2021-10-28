@@ -1,0 +1,38 @@
+.container {
+  padding: 5px;
+}
+.btn {
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-size: 12px;
+  line-height: 19px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn:hover {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn_dark {
+  border: solid 2px #ffffff;
+  background: black;
+  color: #ffffff;
+}
+.btn_dark:hover,
+.btn_dark.active {
+  border: solid 2px #1f1f1f;
+  background: #202020;
+  color: rgb(241, 241, 241);
+}

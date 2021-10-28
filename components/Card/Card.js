@@ -1,29 +1,40 @@
 import React from 'react';
 import classes from './Card.module.css';
+import Image from 'next/dist/client/image';
 
-function Card() {
+function Card(props) {
+  const {image, title, description, price, size, article} = props.cards;
+
+  {
+    console.log(props.title);
+  }
+
+  // const imagePath = `/images/posts/${slug}/${image}`;
+  // const linkPath = `/posts/${slug}`;
+
   return (
-    <div className={classes.card}>
-      <div className={classes.card_img}>
-        <img
-          src="https://cdn.aizel.ru/i/1311353.jpg"
-          className={classes.card_img_first}
-          alt=""></img>
-        {/* <img
-          src="https://cdn.aizel.ru/i/1078030.jpg"
-          className={classes.card_img_second}
-          alt=""></img> */}
-      </div>
-      <div className={classes.card_info}>
-        <div className={classes.card_title}>Burberry</div>
-        <div className={classes.card_description}>Темные синие брюки</div>
-        <div className={classes.card_price}>412$</div>
-        <div className={classes.card_size}>
-          <span>S M L Xl </span>
+    <li className={classes.card}>
+      {/* <Link href={linkPath}> */}
+      <a>
+        <div className={classes.card_img}>
+          <Image
+            src={image}
+            alt={title}
+            width={250}
+            height={300}
+            // layout="responsive"
+          />
         </div>
-      </div>
-    </div>
+        <div className={classes.content}>
+          <h4>{title}</h4>
+          <p>{description}</p>
+          <p>{price}</p>
+          {/* <p>{size}</p>
+          <p>{article}</p> */}
+        </div>
+      </a>
+      {/* </Link> */}
+    </li>
   );
 }
-
 export default Card;

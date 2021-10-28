@@ -1,0 +1,32 @@
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.container_img {
+  width: 50%;
+}
+
+.container_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.container_info h2 {
+  font-size: 60px;
+  position: relative;
+  top: 0;
+}
+
+.container_info button {
+  margin-top: 70px;
+}
