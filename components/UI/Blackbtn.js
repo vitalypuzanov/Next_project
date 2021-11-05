@@ -4,7 +4,9 @@ import classes from './Blackbtn.module.css';
 function Blackbtn({children}) {
   return (
     <div className={classes.container}>
-      <div className={`${classes.btn} ${classes.btn_dark}`}>{children}</div>
+      <button type="submit" className={`${classes.btn} ${classes.btn_dark}`}>
+        {children}
+      </button>
     </div>
   );
 }

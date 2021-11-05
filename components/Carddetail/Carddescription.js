@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/dist/client/image';
 import classes from '../Carddetail/Carddescription.module.css';
 
-function Carddescription() {
+function Carddescription(props) {
   return (
     <div className={classes.container}>
       <div className={classes.ditails}>
@@ -21,25 +21,25 @@ function Carddescription() {
         </div>
       </div>
       <div className={classes.ditails}>
-        <div classNam={classes.composition}>
+        <div className={classes.composition}>
           <h4>Состав</h4>
           <p>Хлопок 92%, Эластан 8%</p>
         </div>
-        <div classNam={classes.recomendation}>
+        <div className={classes.recomendation}>
           <h4>Рекомендации по уходу</h4>
           <p>Только сухая чистка</p>
         </div>
-        <div classNam={classes.article}>
+        <div className={classes.article}>
           <h4>Артикул дизайнера</h4>
           <p>XMD001</p>
         </div>
-        <div classNam={classes.model}>
+        <div className={classes.model}>
           <h4>Модель и образ</h4>
           <p>Рост модели: 1,86 м.</p>
         </div>
       </div>
       <div className={classes.img}>
-        <Image src="/image/main.webp" alt="img" width={400} height={400} />
+        <Image src={props.image} alt="img" width={400} height={400} />
       </div>
     </div>
   );

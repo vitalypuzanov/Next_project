@@ -6,6 +6,7 @@
 }
 
 .info {
+  position: sticky;
   padding-right: 50px;
   width: 35%;
   text-align: center;

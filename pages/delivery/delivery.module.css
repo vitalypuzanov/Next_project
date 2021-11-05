@@ -1,0 +1,44 @@
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidenav {
+  width: 30%;
+}
+
+.container table {
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+}
+
+/* .container table tr {
+  text-align: left;
+}
+
+.container table th {
+  font-weight: lighter;
+} */
+
+.container th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.container tr {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.container td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}

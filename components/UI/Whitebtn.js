@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../UI/Whitebtn.module.css';
+import classes from './Whitebtn.module.css';
 
 function Whitebtn({children}) {
   return (

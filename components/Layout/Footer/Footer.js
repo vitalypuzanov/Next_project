@@ -3,16 +3,51 @@ import Link from 'next/link';
 
 import classes from './Footer.module.css';
 
+const footerData = [
+  {
+    title: 'ПОКУПАТЕЛЯМ',
+    nav1: 'Доставка',
+    nav2: 'Возврат',
+    nav3: 'Частые вопросы',
+  },
+  {
+    title: 'КОМПАНИЯ',
+    nav1: 'О нас',
+    nav2: 'Концепт',
+    nav3: 'Сотруднечество',
+    nav4: 'Контакты',
+  },
+  {
+    title: 'ПРАВОВАЯ ИНФОРМАЦИЯ',
+    nav1: 'Оферта',
+    nav2: 'Обработка личных',
+  },
+];
+
+const iconsData = [
+  {
+    href: 'asd',
+    img: './telegram-svgrepo-com.svg',
+  },
+  {
+    href: 'asd',
+    img: './viber-svgrepo-com.svg',
+  },
+  {
+    href: 'asd',
+    img: './whatsapp-svgrepo-com.svg',
+  },
+];
+
 function Footer() {
   return (
-    <div className={classes.footer}>
-      <div class={classes.footer_logo}>
-        <div className={classes.footer_logo_main}>
-          <div>
-            <h1>Logotype</h1>
-          </div>
+    <footer className={classes.footer}>
+      <div className={classes.footer_icons}>
+        <div className={classes.footer_icons_logo}>
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/17652c15837939.562979668f0e4.jpg"></img>
         </div>
-        <div className={classes.footer_logo_social}>
+
+        <div className={classes.footer_icons_item}>
           <Link href="instagram.com">
             <img src="./instagram-svgrepo-com.svg" alt="" />
           </Link>
@@ -35,96 +70,49 @@ function Footer() {
           <a
             href="tel:+1234567890"
             className={classes.footer_contact_numbers_item}>
-            1234567890{' '}
+            + 375-33-351-58-42{' '}
           </a>
           <a
             href="tel:+1234567890"
             className={classes.footer_contact_numbers_item}>
-            1234567890{' '}
+            + 375-33-351-58-42{' '}
           </a>
         </div>
-        <div className={classes.footer_logo_social}>
-          <a href="asd">
-            {' '}
-            <img
-              src="./telegram-svgrepo-com.svg"
-              className={classes.footer_logo_social_item}
-              alt=""
-            />{' '}
-          </a>
-          <a href="asd">
-            {' '}
-            <img
-              src="./viber-svgrepo-com.svg"
-              className={classes.footer_logo_social_item}
-              alt=""
-            />{' '}
-          </a>
-          <a href="asdas">
-            {' '}
-            <img
-              src="./whatsapp-svgrepo-com.svg"
-              className={classes.footer_logo_social_item}
-              alt=""
-            />{' '}
-          </a>
+        <div className={classes.footer_contact_icons}>
+          {iconsData.map((iconsData) => (
+            <a href={iconsData.href}>
+              {' '}
+              <img
+                src={iconsData.img}
+                className={classes.footer_contact_icon}
+                alt=""
+              />{' '}
+            </a>
+          ))}
         </div>
       </div>
-
-      <nav className={classes.footer_nav}>
-        <div>
-          <h3>ПОКУПАТЕЛЯМ</h3>
-        </div>
-        <ul>
-          <Link href="/mens">
-            <li>Доставка</li>
-          </Link>
-          <Link href="/mens">
-            <li>Оплата</li>
-          </Link>
-          <Link href="/mens">
-            <li>Возврат</li>
-          </Link>
-          <Link href="/mens">
-            <li>Частые вопросы</li>
-          </Link>
-        </ul>
-      </nav>
-
-      <nav className={classes.footer_nav}>
-        <div>
-          <h3>КОМПАНИЯ</h3>
-        </div>
-        <ul>
-          <Link href="/mens">
-            <li>О нас</li>
-          </Link>
-          <Link href="/mens">
-            <li>Концепт</li>
-          </Link>
-          <Link href="/mens">
-            <li>Сотруднечество</li>
-          </Link>
-          <Link href="/mens">
-            <li>Контакты</li>
-          </Link>
-        </ul>
-      </nav>
-
-      <nav className={classes.footer_nav}>
-        <div>
-          <h3>ПРАВОВАЯ ИНФОРМАЦИЯ</h3>
-        </div>
-        <ul>
-          <Link href="/mens">
-            <li>Оферта</li>
-          </Link>
-          <Link href="/mens">
-            <li>Обработка личных</li>
-          </Link>
-        </ul>
-      </nav>
-    </div>
+      {footerData.map((footerData) => (
+        <nav className={classes.footer_nav}>
+          <div>
+            <h3>{footerData.title}</h3>
+          </div>
+          <ul>
+            <Link href="/delivery">
+              <li>{footerData.nav1}</li>
+            </Link>
+            <Link href="/mens">
+              <li>{footerData.nav2}</li>
+            </Link>
+            <Link href="/mens">
+              <li>{footerData.nav3}</li>
+            </Link>
+            <Link href="/mens">
+              <li>{footerData.nav4}</li>
+            </Link>
+          </ul>
+        </nav>
+      ))}
+    </footer>
   );
 }
 

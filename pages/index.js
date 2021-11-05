@@ -1,76 +1,24 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Main from '../components/HomePage/Main';
+import {MongoClient} from 'mongodb';
 import {Fragment} from 'react';
-import Actualgrid from '../components/HomePage/Actual/Actualgrid';
+import СategoriesGrid from '../components/HomePage/Сategories/СategoriesGrid';
 import Cardgrid from '../components/Card/Cardgrid';
-import Contactform from '../components/HomePage/Actual/Contactform';
+import Contactform from '../components/HomePage/Contact/Contactform';
 
-const datacard = [
-  {
-    image: '/image/hoode.jpg',
-    title: 'Burbery',
-    description: 'парка с капюшоном и логотипом',
-    price: '50$',
-    slug: 1,
-    size: 's',
-    article: 2,
-  },
-  {
-    image: '/image/hoode.jpg',
-    title: 'Burbery',
-    description: 'парка с капюшоном и логотипом',
-    price: '50$',
-    slug: 1,
-    size: 's',
-    article: 2,
-  },
-  {
-    image: '/image/hoode.jpg',
-    title: 'Burbery',
-    description: 'парка с капюшоном и логотипом',
-    price: '50$',
-    slug: 1,
-    size: 's',
-    article: 2,
-  },
-  {
-    image: '/image/hoode.jpg',
-    title: 'Burbery',
-    description: 'парка с капюшоном и логотипом',
-    price: '50$',
-    slug: 1,
-    size: 's',
-    article: 2,
-  },
-  {
-    image: '/image/hoode.jpg',
-    title: 'Burbery',
-    description: 'парка с капюшоном и логотипом',
-    price: '50$',
-    slug: 1,
-    size: 's',
-    article: 2,
-  },
-  {
-    image: '/image/hoode.jpg',
-    title: 'Burbery',
-    description: 'парка с капюшоном и логотипом',
-    price: '50$',
-    slug: 1,
-    size: 's',
-    article: 2,
-  },
-];
+export default function Home(props) {
+  async function addEmailHandler(emailData) {
+    const response = await fetch('/api/email', {
+      method: 'POST',
+      body: JSON.stringify(emailData),
+      headers: {
+        'Content-Type': 'aplication/json',
+      },
+    });
+    const data = await response.json();
+  }
 
-const actualdata = [
-  {image: '/image/hoode.jpg', title: 'Толстовки и худи'},
-  {image: '/image/sneak.jpg', title: 'Кроссовки'},
-  {image: '/image/coat.png', title: 'Верхняя одежда'},
-  {image: '/image/under.jpg', title: 'Нижнее белью'},
-];
-
-export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -80,13 +28,43 @@ export default function Home() {
       </Head>
       <Fragment>
         <Main></Main>
-        {/* <Cardgrid cards={datacard}></Cardgrid> */}
-
-        <Cardgrid cards={datacard}></Cardgrid>
-        <Actualgrid actualdata={actualdata}></Actualgrid>
-        <Contactform></Contactform>
+        <Cardgrid cards={props.datacard}></Cardgrid>
+        <СategoriesGrid actualdata={props.actualdata}></СategoriesGrid>
+        <Contactform addEmail={addEmailHandler}></Contactform>
       </Fragment>
-      {console.log(datacard)}
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const client = await MongoClient.connect(
+    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/goods?retryWrites=true&w=majority',
+  );
+  const db = client.db();
+
+  const goodsCollection = db.collection('goods');
+  const datacard = await goodsCollection.find().toArray();
+  const mainCollection = db.collection('main');
+  const main = await mainCollection.find().toArray();
+  client.close();
+
+  return {
+    props: {
+      datacard: datacard.map((datacard) => ({
+        image: datacard.image,
+        title: datacard.title,
+        description: datacard.description,
+        price: datacard.price,
+        slug: datacard.slug,
+        size: datacard.size,
+        article: datacard.article,
+        id: datacard._id.toString(),
+      })),
+      actualdata: main.map((main) => ({
+        image: main.image,
+        title: main.title,
+      })),
+    },
+    revalidate: 1,
+  };
 }

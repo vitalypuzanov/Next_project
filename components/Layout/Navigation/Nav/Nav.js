@@ -1,18 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
-import classes from './Nav.module.css';
-import Search from './Search';
+import classes from '../Nav/Nav.module.css';
+import Search from '../Search/Search';
 
 function Nav() {
   const navdata = [
-    {href: '/sale', title: 'Распродажа'},
-    {href: '/new', title: 'Новинки'},
+    {href: '/categories', title: 'Категории'},
     {href: '/wear', title: 'Одежда'},
-    {href: '/contact', title: 'Контакнты'},
+    {href: '/delivery', title: 'Доставка'},
+    {href: '/contacts', title: 'Контакнты'},
   ];
   return (
     <header className={classes.header}>
-      <div className={classes.nav_title}>
+      <div key={navdata.title} className={classes.nav_title}>
         {navdata.map((navdata) => (
           <nav>
             <ul>

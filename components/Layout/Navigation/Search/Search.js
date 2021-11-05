@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../Navigation/Nav.module.css';
+import classes from '../Search/Search .module.css';
 
 function Search() {
   return (
