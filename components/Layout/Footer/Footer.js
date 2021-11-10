@@ -57,23 +57,12 @@ function Footer() {
       </div>
       {footerData.map((footerData) => (
         <nav key={footerData.id} className={classes.footer_nav}>
-          <div>
-            <h3>{footerData.title}</h3>
-          </div>
-          <ul>
-            <Link href="/delivery">
-              <li>{footerData.nav1}</li>
+          <h3>{footerData.title}</h3>
+          {footerData.menu.map((menuItem) => (
+            <Link href={menuItem.url}>
+              <li>{menuItem.name}</li>
             </Link>
-            <Link href="/mens">
-              <li>{footerData.nav2}</li>
-            </Link>
-            <Link href="/mens">
-              <li>{footerData.nav3}</li>
-            </Link>
-            <Link href="/mens">
-              <li>{footerData.nav4}</li>
-            </Link>
-          </ul>
+          ))}
         </nav>
       ))}
     </footer>

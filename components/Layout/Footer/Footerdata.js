@@ -2,23 +2,56 @@ export const footerData = [
   {
     id: '1',
     title: 'ПОКУПАТЕЛЯМ',
-    nav1: 'Доставка',
-    nav2: 'Возврат',
-    nav3: 'Частые вопросы',
+    menu: [
+      {
+        url: '/delivery',
+        name: 'Доставка',
+      },
+      {
+        url: '/delivery',
+        name: 'Возврат',
+      },
+      {
+        url: '/delivery',
+        name: 'Частые вопросы',
+      },
+    ],
   },
   {
     id: '2',
     title: 'КОМПАНИЯ',
-    nav1: 'О нас',
-    nav2: 'Концепт',
-    nav3: 'Сотруднечество',
-    nav4: 'Контакты',
+    menu: [
+      {
+        url: '/delivery',
+        name: 'О нас',
+      },
+      {
+        url: '/delivery',
+        name: 'Концепт',
+      },
+      {
+        url: '/delivery',
+        name: 'Сотруднечество вопросы',
+      },
+      {
+        url: '/delivery',
+        name: 'Контакты',
+      },
+    ],
   },
   {
     id: '3',
     title: 'ПРАВОВАЯ ИНФОРМАЦИЯ',
-    nav1: 'Оферта',
-    nav2: 'Обработка личных',
+    menu: [
+      {
+        url: '/delivery',
+        name: 'Оферта',
+      },
+      {
+        url: '/delivery',
+        name: 'Jбработка данных',
+      },
+    ],
   },
 ];
 

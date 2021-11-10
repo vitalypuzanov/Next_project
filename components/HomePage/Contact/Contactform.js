@@ -1,9 +1,9 @@
 import React, {useState, useRef} from 'react';
 
-import Blackbtn from '../../UI/Blackbtn';
+import BlackButton from '../../UI/BlackButton';
 import classes from './Contactform.module.css';
 
-function Contactform(props) {
+function Contactform({addEmail}) {
   const emailinputRef = useRef();
 
   function sendMessageHandler(event) {
@@ -11,7 +11,7 @@ function Contactform(props) {
     const enteredEmail = emailinputRef.current.value;
 
     const emailData = {email: enteredEmail};
-    props.addEmail(emailData);
+    addEmail(emailData);
   }
 
   return (
@@ -26,7 +26,7 @@ function Contactform(props) {
             <div className={classes.wrapper}>
               <label htmlFor="email"></label>
               <input type="email" id="email" required ref={emailinputRef} />
-              <Blackbtn>Подписаться</Blackbtn>
+              <BlackButton>Подписаться</BlackButton>
             </div>
           </form>
         </div>

@@ -1,14 +1,7 @@
 import React from 'react';
 import classes from './Select.module.css';
 
-const options = [
-  {value: '0', label: 'Выберите размер'},
-  {value: '1', label: 'Xs'},
-  {value: '2', label: 'S'},
-  {value: '3', label: 'M'},
-];
-
-function Select() {
+function Select({options = []}) {
   return (
     <div>
       <div className={classes.custom_select}>

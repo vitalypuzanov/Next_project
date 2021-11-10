@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './Blackbtn.module.css';
+import classes from './BlackButton.module.css';
 
-function Blackbtn({children}) {
+function BlackButton({children}) {
   return (
     <div className={classes.container}>
       <button type="submit" className={`${classes.btn} ${classes.btn_dark}`}>
@@ -11,4 +11,4 @@ function Blackbtn({children}) {
   );
 }
 
-export default Blackbtn;
+export default BlackButton;

@@ -21,37 +21,35 @@ const description = [
   },
 ];
 
-function Carddescription(props) {
-  return (
-    <div className={classes.container}>
-      <div className={classes.ditails}>
-        <div className={classes.ditails_title}>
-          <h3>Fendi</h3>
-          <p>двусторонняя стеганая куртка</p>
-        </div>
-        <div className={classes.ditails_description}>
-          <h3>Подробнее о товаре</h3>
-          <ul>
-            <li>цвет: синий</li>
-            <li>эластичный хлопок</li>
-            <li>эффект потертости</li>
-            <li>узкий крой</li>
-          </ul>
-        </div>
+const CardDescription = ({image}) => (
+  <div className={classes.container}>
+    <div className={classes.ditails}>
+      <div className={classes.ditails_title}>
+        <h3>Fendi</h3>
+        <p>двусторонняя стеганая куртка</p>
       </div>
-      <div className={classes.ditails}>
-        {description.map((description) => (
-          <div key={description.title}>
-            <h4>{description.title}</h4>
-            <p>{description.value}</p>
-          </div>
-        ))}
-      </div>
-      <div className={classes.img}>
-        <Image src={props.image} alt="img" width={400} height={400} />
+      <div className={classes.ditails_description}>
+        <h3>Подробнее о товаре</h3>
+        <ul>
+          <li>цвет: синий</li>
+          <li>эластичный хлопок</li>
+          <li>эффект потертости</li>
+          <li>узкий крой</li>
+        </ul>
       </div>
     </div>
-  );
-}
+    <div className={classes.ditails}>
+      {description.map((description) => (
+        <div key={description.title}>
+          <h4>{description.title}</h4>
+          <p>{description.value}</p>
+        </div>
+      ))}
+    </div>
+    <div className={classes.img}>
+      <Image src={image} alt="img" width={400} height={400} />
+    </div>
+  </div>
+);
 
-export default Carddescription;
+export default CardDescription;

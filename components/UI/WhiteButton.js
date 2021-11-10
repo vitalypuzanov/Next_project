@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './Whitebtn.module.css';
+import classes from './WhiteButton.module.css';
 
-function Whitebtn({children}) {
+function WhiteButton({children}) {
   return (
     <div>
       <button className={`${classes.btn} ${classes.btn_dark}`}>
@@ -11,4 +11,4 @@ function Whitebtn({children}) {
   );
 }
 
-export default Whitebtn;
+export default WhiteButton;

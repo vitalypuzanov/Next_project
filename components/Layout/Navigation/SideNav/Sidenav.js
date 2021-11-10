@@ -12,7 +12,7 @@ const navdata = [
 
 function Sidenav() {
   return (
-    <div key={navdata.title} className={classes.nav_title}>
+    <div className={classes.nav_title}>
       {navdata.map((navdata) => (
         <nav key={navdata.title}>
           <ul>

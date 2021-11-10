@@ -8,9 +8,9 @@ function Card(props) {
   const router = useRouter();
   const {image, title, description, price} = props.cards;
 
-  function showDetailsHandler() {
+  const showDetailsHandler = () => {
     router.push(props.id);
-  }
+  };
 
   return (
     <li onClick={showDetailsHandler} className={classes.card}>

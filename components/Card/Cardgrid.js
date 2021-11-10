@@ -2,10 +2,8 @@ import React from 'react';
 import Card from './Card';
 import classes from './Cardgrid.module.css';
 
-function Cardgrid(props) {
-  const {cards} = props;
-
-  return (
+const Cardgrid = ({cards}) => (
+  <div>
     <div className={classes.container}>
       <h2>Товары</h2>
       <div className={classes.grid}>
@@ -14,9 +12,6 @@ function Cardgrid(props) {
         ))}
       </div>
     </div>
-  );
-}
-{
-}
-
+  </div>
+);
 export default Cardgrid;

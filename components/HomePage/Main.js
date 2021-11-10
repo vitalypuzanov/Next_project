@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import classes from './Main.module.css';
-import Blackbtn from '../UI/Blackbtn';
+import BlackButton from '../UI/BlackButton';
 import {connectToDatabase} from '../../lib/db';
 // import {MongoClient} from 'mongodb';
 
@@ -49,31 +49,29 @@ export async function getStaticProps() {
   };
 }
 
-function Main() {
-  return (
-    <>
-      {maindata.map((maindata) => (
-        <div
-          key={maindata.id}
-          className={`${classes.container} ${maindata.style}`}>
-          <div className={classes.container_img}>
-            <Image
-              src={maindata.image}
-              alt="img"
-              width={800}
-              height={800}
-              layout="responsive"
-            />
-          </div>
-          <div className={classes.container_info}>
-            <h2>{maindata.title}</h2>
-            <p>{maindata.text}</p>
-            <Blackbtn>Узнать больше</Blackbtn>
-          </div>
+const Main = () => (
+  <>
+    {maindata.map((maindata) => (
+      <div
+        key={maindata.id}
+        className={`${classes.container} ${maindata.style}`}>
+        <div className={classes.container_img}>
+          <Image
+            src={maindata.image}
+            alt="img"
+            width={800}
+            height={800}
+            layout="responsive"
+          />
         </div>
-      ))}
-    </>
-  );
-}
+        <div className={classes.container_info}>
+          <h2>{maindata.title}</h2>
+          <p>{maindata.text}</p>
+          <BlackButton>Узнать больше</BlackButton>
+        </div>
+      </div>
+    ))}
+  </>
+);
 
 export default Main;

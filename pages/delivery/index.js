@@ -1,20 +1,9 @@
 import React from 'react';
 import Sidenav from '../../components/Layout/Navigation/Sidenav/Sidenav';
 import classes from '../delivery/delivery.module.css';
+import {tableData} from './tableData';
 
-const tableData = [
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '1'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '2'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '3'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '4'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '5'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '6'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '7'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '8'},
-  {city: 'Москва', data: '1-2 дня', price: '350', id: '9'},
-];
-
-function index() {
+function delivery() {
   return (
     <div className={classes.wrapper}>
       <Sidenav className={classes.sidenav}></Sidenav>
@@ -81,4 +70,4 @@ function index() {
   );
 }
 
-export default index;
+export default delivery;
