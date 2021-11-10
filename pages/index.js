@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-// import {MongoClient} from 'mongodb';
+import {MongoClient} from 'mongodb';
 import {Fragment} from 'react';
 
 import Main from '../components/HomePage/Main';
@@ -40,11 +40,10 @@ export default function Home(props) {
   );
 }
 
-export async function getStaticProps(props) {
-  const client = connectToDatabase(goods);
-  // const client = await MongoClient.connect(
-  //   'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/goods?retryWrites=true&w=majority',
-  // );
+export async function getStaticProps() {
+  const client = await MongoClient.connect(
+    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/goods?retryWrites=true&w=majority',
+  );
   const db = client.db();
 
   const goodsCollection = db.collection('goods');
