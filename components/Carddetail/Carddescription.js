@@ -2,6 +2,25 @@ import React from 'react';
 import Image from 'next/dist/client/image';
 import classes from '../Carddetail/Carddescription.module.css';
 
+const description = [
+  {
+    title: 'Состав',
+    value: 'Хлопок 92%, Эластан 8%',
+  },
+  {
+    title: 'Рекомендации по уходу',
+    value: 'Только сухая чистка%',
+  },
+  {
+    title: 'Артикул дизайнера',
+    value: 'XMD001',
+  },
+  {
+    title: 'Модель и образ',
+    value: 'Рост модели: 1,86 м.',
+  },
+];
+
 function Carddescription(props) {
   return (
     <div className={classes.container}>
@@ -21,22 +40,12 @@ function Carddescription(props) {
         </div>
       </div>
       <div className={classes.ditails}>
-        <div className={classes.composition}>
-          <h4>Состав</h4>
-          <p>Хлопок 92%, Эластан 8%</p>
-        </div>
-        <div className={classes.recomendation}>
-          <h4>Рекомендации по уходу</h4>
-          <p>Только сухая чистка</p>
-        </div>
-        <div className={classes.article}>
-          <h4>Артикул дизайнера</h4>
-          <p>XMD001</p>
-        </div>
-        <div className={classes.model}>
-          <h4>Модель и образ</h4>
-          <p>Рост модели: 1,86 м.</p>
-        </div>
+        {description.map((description) => (
+          <div key={description.title}>
+            <h4>{description.title}</h4>
+            <p>{description.value}</p>
+          </div>
+        ))}
       </div>
       <div className={classes.img}>
         <Image src={props.image} alt="img" width={400} height={400} />

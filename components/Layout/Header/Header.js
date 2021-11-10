@@ -4,9 +4,9 @@ import classes from '../Header/Header.module.css';
 import Nav from '../Navigation/Nav/Nav';
 
 const iconData = [
-  {href: '/auth', img: 'man-svgrepo-com.svg'},
-  {href: '/auth', img: 'bag-svgrepo-com.svg'},
-  {href: '/auth', img: 'star-svgrepo-com.svg'},
+  {href: '/auth', img: 'man-svgrepo-com.svg', id: '1'},
+  {href: '/auth', img: 'bag-svgrepo-com.svg', id: '2'},
+  {href: '/auth', img: 'star-svgrepo-com.svg', id: '3'},
 ];
 
 function Header() {
@@ -32,7 +32,7 @@ function Header() {
           <div className={classes.header__icon_items}>
             <div className={classes.header__icon_item}>
               {iconData.map((iconData) => (
-                <Link href={iconData.href}>
+                <Link key={iconData.id} href={iconData.href}>
                   <img src={iconData.img} alt="logo" />
                 </Link>
               ))}

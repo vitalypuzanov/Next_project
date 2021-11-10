@@ -5,15 +5,6 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-
-  /* max-width: 100%;
-  width: 137rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding: var(--spacers-l24) var(--spacers-l12) var(--spacers-l24);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: var(--spacers-l48) var(--spacers-l12); */
 }
 .content {
   display: flex;
@@ -35,18 +26,6 @@
   max-width: 300px;
   max-height: 300px;
 }
-
-/* .card .card_img_second {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-}
-
-.card:hover .card_img_second {
-  display: inline;
-} */
 
 .card_title {
   font-size: 20px;

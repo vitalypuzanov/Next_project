@@ -10,7 +10,7 @@ function Cardgrid(props) {
       <h2>Товары</h2>
       <div className={classes.grid}>
         {cards.map((cards) => (
-          <Card key={cards.arcticle} id={cards.id} cards={cards} />
+          <Card key={cards.id} id={cards.id} cards={cards} />
         ))}
       </div>
     </div>

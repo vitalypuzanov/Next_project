@@ -5,16 +5,16 @@ import Search from '../Search/Search';
 
 function Nav() {
   const navdata = [
-    {href: '/categories', title: 'Категории'},
-    {href: '/wear', title: 'Одежда'},
-    {href: '/delivery', title: 'Доставка'},
-    {href: '/contacts', title: 'Контакнты'},
+    {href: '/categories', title: 'Категории', id: '1'},
+    {href: '/wear', title: 'Одежда', id: '2'},
+    {href: '/delivery', title: 'Доставка', id: '3'},
+    {href: '/contacts', title: 'Контакнты', id: '4'},
   ];
   return (
     <header className={classes.header}>
       <div key={navdata.title} className={classes.nav_title}>
         {navdata.map((navdata) => (
-          <nav>
+          <nav key={navdata.id}>
             <ul>
               <li>
                 <Link href={navdata.href}>{navdata.title}</Link>

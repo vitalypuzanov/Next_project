@@ -1,15 +1,15 @@
 import React from 'react';
-import classes from './Card.module.css';
 import Image from 'next/dist/client/image';
-
 import {useRouter} from 'next/router';
+
+import classes from './Card.module.css';
+
 function Card(props) {
   const router = useRouter();
   const {image, title, description, price} = props.cards;
-  console.log;
 
   function showDetailsHandler() {
-    router.push('/' + props.id);
+    router.push(props.id);
   }
 
   return (

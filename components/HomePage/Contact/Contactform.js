@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
+
 import Blackbtn from '../../UI/Blackbtn';
 import classes from './Contactform.module.css';
-import {useState, useRef} from 'react';
 
 function Contactform(props) {
   const emailinputRef = useRef();

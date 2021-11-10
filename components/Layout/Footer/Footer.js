@@ -2,42 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import classes from './Footer.module.css';
-
-const footerData = [
-  {
-    title: 'ПОКУПАТЕЛЯМ',
-    nav1: 'Доставка',
-    nav2: 'Возврат',
-    nav3: 'Частые вопросы',
-  },
-  {
-    title: 'КОМПАНИЯ',
-    nav1: 'О нас',
-    nav2: 'Концепт',
-    nav3: 'Сотруднечество',
-    nav4: 'Контакты',
-  },
-  {
-    title: 'ПРАВОВАЯ ИНФОРМАЦИЯ',
-    nav1: 'Оферта',
-    nav2: 'Обработка личных',
-  },
-];
-
-const iconsData = [
-  {
-    href: 'asd',
-    img: './telegram-svgrepo-com.svg',
-  },
-  {
-    href: 'asd',
-    img: './viber-svgrepo-com.svg',
-  },
-  {
-    href: 'asd',
-    img: './whatsapp-svgrepo-com.svg',
-  },
-];
+import {footerData, iconsData} from './Footerdata';
 
 function Footer() {
   return (
@@ -70,29 +35,28 @@ function Footer() {
           <a
             href="tel:+1234567890"
             className={classes.footer_contact_numbers_item}>
-            + 375-33-351-58-42{' '}
+            + 375-33-351-58-42
           </a>
           <a
             href="tel:+1234567890"
             className={classes.footer_contact_numbers_item}>
-            + 375-33-351-58-42{' '}
+            + 375-33-351-58-42
           </a>
         </div>
         <div className={classes.footer_contact_icons}>
           {iconsData.map((iconsData) => (
-            <a href={iconsData.href}>
-              {' '}
+            <a key={iconsData.id} href={iconsData.href}>
               <img
                 src={iconsData.img}
                 className={classes.footer_contact_icon}
                 alt=""
-              />{' '}
+              />
             </a>
           ))}
         </div>
       </div>
       {footerData.map((footerData) => (
-        <nav className={classes.footer_nav}>
+        <nav key={footerData.id} className={classes.footer_nav}>
           <div>
             <h3>{footerData.title}</h3>
           </div>

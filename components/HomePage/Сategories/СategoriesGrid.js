@@ -13,7 +13,7 @@ function СategoriesGrid(props) {
       </div>
       <div className={classes.container}>
         {data.map((data) => (
-          <СategoriesItem actualdata={data} />
+          <СategoriesItem key={data.image} actualdata={data} />
         ))}
       </div>
     </Fragment>

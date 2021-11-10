@@ -2,6 +2,18 @@ import React from 'react';
 import Sidenav from '../../components/Layout/Navigation/Sidenav/Sidenav';
 import classes from '../delivery/delivery.module.css';
 
+const tableData = [
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '1'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '2'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '3'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '4'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '5'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '6'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '7'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '8'},
+  {city: 'Москва', data: '1-2 дня', price: '350', id: '9'},
+];
+
 function index() {
   return (
     <div className={classes.wrapper}>
@@ -45,36 +57,13 @@ function index() {
             <th>Сроки </th>
             <th>Стоимость </th>
           </tr>
-          <tr>
-            <td>Москва</td>
-            <td>1-2 дня</td>
-            <td>350</td>
-          </tr>
-          <tr>
-            <td>Москва</td>
-            <td>1-2 дня</td>
-            <td>350</td>
-          </tr>
-          <tr>
-            <td>Москва</td>
-            <td>1-2 дня</td>
-            <td>350</td>
-          </tr>
-          <tr>
-            <td>Москва</td>
-            <td>1-2 дня</td>
-            <td>350</td>
-          </tr>
-          <tr>
-            <td>Москва</td>
-            <td>1-2 дня</td>
-            <td>350</td>
-          </tr>
-          <tr>
-            <td>Москва</td>
-            <td>1-2 дня</td>
-            <td>350</td>
-          </tr>
+          {tableData.map((tableData) => (
+            <tr key={tableData.id}>
+              <td>{tableData.city}</td>
+              <td>{tableData.data}</td>
+              <td>{tableData.price}</td>
+            </tr>
+          ))}
         </table>
         <h2>Самовывоз</h2>
         <p>

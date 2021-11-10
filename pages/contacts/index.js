@@ -1,8 +1,10 @@
 import React from 'react';
-import classes from './index.module.css';
 import Link from 'next/dist/client/link';
+
 import Contactform from '../../components/HomePage/Contact/Contactform';
 import Sidenav from '../../components/Layout/Navigation/Sidenav/Sidenav';
+
+import classes from './index.module.css';
 
 function index() {
   return (
@@ -24,7 +26,7 @@ function index() {
                 src="./viber-svgrepo-com.svg"
                 className={classes.footer_logo_social_item}
                 alt=""
-              />{' '}
+              />
             </a>
             <a className={classes.footer_logo_social_item}>
               Facebook
@@ -32,7 +34,7 @@ function index() {
                 src="./facebook-svgrepo-com.svg"
                 className={classes.footer_logo_social_item}
                 alt=""
-              />{' '}
+              />
             </a>
             <a className={classes.footer_logo_social_item}>
               Instagram
@@ -40,7 +42,7 @@ function index() {
                 src="./instagram-svgrepo-com.svg"
                 className={classes.footer_logo_social_item}
                 alt=""
-              />{' '}
+              />
             </a>
             <a className={classes.footer_logo_social_item}>
               Telegram
@@ -48,7 +50,7 @@ function index() {
                 src="./telegram-svgrepo-com.svg"
                 className={classes.footer_logo_social_item}
                 alt=""
-              />{' '}
+              />
             </a>
           </div>
           <div>Звоните </div>

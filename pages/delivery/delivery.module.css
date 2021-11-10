@@ -19,14 +19,6 @@
   border-collapse: collapse;
 }
 
-/* .container table tr {
-  text-align: left;
-}
-
-.container table th {
-  font-weight: lighter;
-} */
-
 .container th {
   border: 1px solid #dddddd;
   text-align: left;
