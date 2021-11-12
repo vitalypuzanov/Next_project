@@ -1,12 +1,12 @@
 import React from 'react';
-import Carddetail from '../../components/Carddetail/Carddetail';
+import CardDetail from '../../components/Carddetail/CardDetail';
 
-import {MongoClient, ObjectId} from 'mongodb';
+import {ObjectId} from 'mongodb';
+import {connectToDatabase} from '../../lib/db';
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/goods?retryWrites=true&w=majority',
-  );
+  connectToDatabase;
+  const client = await connectToDatabase();
   const db = client.db();
   const goodsCollection = db.collection('goods');
   const goods = await goodsCollection.find({}, {_id: 1}).toArray();
@@ -23,9 +23,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const goodsId = context.params.goodsId;
-  const client = await MongoClient.connect(
-    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/goods?retryWrites=true&w=majority',
-  );
+  const client = await connectToDatabase();
   const db = client.db();
 
   const goodsCollection = db.collection('goods');
@@ -53,7 +51,7 @@ export async function getStaticProps(context) {
 function index(props) {
   return (
     <>
-      <Carddetail
+      <CardDetail
         image={props.selectedgoods.image}
         title={props.selectedgoods.title}
         description={props.selectedgoods.description}

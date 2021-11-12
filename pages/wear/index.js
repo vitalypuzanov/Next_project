@@ -1,19 +1,17 @@
 import React from 'react';
-import Cardgrid from '../../components/Card/Cardgrid';
-import {MongoClient} from 'mongodb';
+import CardGrid from '../../components/Card/CardGrid';
+import {connectToDatabase} from '../../lib/db';
 
 function goods(props) {
   return (
     <div>
-      <Cardgrid cards={props.actualdata}></Cardgrid>
+      <CardGrid cards={props.actualdata}></CardGrid>
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/goods?retryWrites=true&w=majority',
-  );
+  const client = await connectToDatabase();
   const db = client.db();
 
   const goodsCollection = db.collection('goods');

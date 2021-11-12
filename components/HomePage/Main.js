@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import classes from './Main.module.css';
 import BlackButton from '../UI/BlackButton';
-import {connectToDatabase} from '../../lib/db';
-// import {MongoClient} from 'mongodb';
 
 const maindata = [
   {
@@ -21,33 +19,6 @@ const maindata = [
     style: 'clases.reverse',
   },
 ];
-
-export async function getStaticProps() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/maininfo?retryWrites=true&w=majority',
-  );
-  // connectToDatabase(maindata)
-  const db = client.db();
-
-  const maininfoCollection = db.collection('maininfo');
-  const maindata = await maininfoCollection.find().toArray();
-  client.close();
-  if (!maindata) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      maindata: maindata.map((maindata) => ({
-        image: maindata.image,
-        title: maindata.title,
-      })),
-    },
-    revalidate: 1,
-  };
-}
 
 const Main = () => (
   <>

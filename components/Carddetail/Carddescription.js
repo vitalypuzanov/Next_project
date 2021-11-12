@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/dist/client/image';
-import classes from '../Carddetail/Carddescription.module.css';
+import classes from '../CardDetail/CardDescription.module.css';
 
 const description = [
   {

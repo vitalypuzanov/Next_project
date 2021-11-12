@@ -1,15 +1,15 @@
 import Head from 'next/head';
 
-import {MongoClient} from 'mongodb';
 import {Fragment} from 'react';
 
 import Main from '../components/HomePage/Main';
 import СategoriesGrid from '../components/HomePage/Сategories/СategoriesGrid';
-import Cardgrid from '../components/Card/Cardgrid';
-import Contactform from '../components/HomePage/Contact/Contactform';
+import CardGrid from '../components/Card/CardGrid';
+import ContactForm from '../components/HomePage/Contact/ContactForm';
+
+import {connectToDatabase} from '../lib/db';
 
 import styles from '../styles/Home.module.css';
-import {connectToDatabase} from '../lib/db';
 
 export default function Home(props) {
   async function addEmailHandler(emailData) {
@@ -32,18 +32,16 @@ export default function Home(props) {
       </Head>
       <Fragment>
         <Main></Main>
-        <Cardgrid cards={props.datacard}></Cardgrid>
+        <CardGrid cards={props.datacard}></CardGrid>
         <СategoriesGrid actualdata={props.actualdata}></СategoriesGrid>
-        <Contactform addEmail={addEmailHandler}></Contactform>
+        <ContactForm addEmail={addEmailHandler}></ContactForm>
       </Fragment>
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/goods?retryWrites=true&w=majority',
-  );
+  const client = await connectToDatabase();
   const db = client.db();
 
   const goodsCollection = db.collection('goods');

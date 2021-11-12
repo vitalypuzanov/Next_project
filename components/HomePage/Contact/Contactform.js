@@ -1,9 +1,9 @@
 import React, {useState, useRef} from 'react';
 
 import BlackButton from '../../UI/BlackButton';
-import classes from './Contactform.module.css';
+import classes from './ContactForm.module.css';
 
-function Contactform({addEmail}) {
+function ContactForm({addEmail}) {
   const emailinputRef = useRef();
 
   function sendMessageHandler(event) {
@@ -41,4 +41,4 @@ function Contactform({addEmail}) {
   );
 }
 
-export default Contactform;
+export default ContactForm;

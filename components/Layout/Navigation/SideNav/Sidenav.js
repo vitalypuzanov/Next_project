@@ -13,15 +13,15 @@ const navdata = [
 function Sidenav() {
   return (
     <div className={classes.nav_title}>
-      {navdata.map((navdata) => (
-        <nav key={navdata.title}>
-          <ul>
+      <ul>
+        {navdata.map((navdata) => (
+          <nav key={navdata.title}>
             <li>
               <Link href={navdata.href}>{navdata.title}</Link>
             </li>
-          </ul>
-        </nav>
-      ))}
+          </nav>
+        ))}
+      </ul>
     </div>
   );
 }

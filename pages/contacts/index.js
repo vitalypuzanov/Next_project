@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/dist/client/link';
 
-import Contactform from '../../components/HomePage/Contact/Contactform';
+import ContactForm from '../../components/HomePage/Contact/ContactForm';
 import Sidenav from '../../components/Layout/Navigation/Sidenav/Sidenav';
 
 import classes from './index.module.css';
@@ -87,7 +87,7 @@ function index() {
           <Link href="/partner"> Условия сотрудничества</Link>
         </div>
       </div>
-      <Contactform></Contactform>
+      <ContactForm></ContactForm>
     </>
   );
 }

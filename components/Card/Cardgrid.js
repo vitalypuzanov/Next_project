@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from './Card';
-import classes from './Cardgrid.module.css';
+import classes from './CardGrid.module.css';
 
-const Cardgrid = ({cards}) => (
+const CardGrid = ({cards}) => (
   <div>
     <div className={classes.container}>
       <h2>Товары</h2>
@@ -14,4 +14,4 @@ const Cardgrid = ({cards}) => (
     </div>
   </div>
 );
-export default Cardgrid;
+export default CardGrid;

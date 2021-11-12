@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from '../UI/Select';
-import classes from '../Carddetail/Carddetail.module.css';
+import classes from '../CardDetail/CardDetail.module.css';
 import BlackButton from '../UI/BlackButton';
 import WhiteButton from '../UI/WhiteButton';
 
@@ -14,7 +14,7 @@ const options = [
   {value: '3', label: 'M'},
 ];
 
-function Carddetail({image, title, description, price, fulldescription}) {
+function CardDetail({image, title, description, price, fulldescription}) {
   return (
     <div>
       <div className={classes.container}>
@@ -39,4 +39,4 @@ function Carddetail({image, title, description, price, fulldescription}) {
   );
 }
 
-export default Carddetail;
+export default CardDetail;
