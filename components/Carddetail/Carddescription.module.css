@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  border-top: solid 0.2px;
+  border-top-color: rgb(209, 209, 209);
+}
+
+.ditails_title {
+  text-align: left;
+}
+
+.ditails {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 70px;
+}
+
+.ditails:first-child {
+  margin-top: 20;
+}

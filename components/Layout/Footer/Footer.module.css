@@ -1,0 +1,82 @@
+.footer {
+  flex-wrap: wrap;
+  width: 100%;
+  position: absolute;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 100;
+}
+
+.footer_icons_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.footer_icons_item img {
+  width: 25px;
+  height: 25px;
+}
+
+.footer_contact_numbers {
+  display: flex;
+  flex-direction: column;
+}
+.footer_contact_numbers a {
+  margin: 5px 0px;
+}
+
+.footer_contact_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.footer_contact_icon {
+  width: 25px;
+  height: 25px;
+}
+
+.footer_icons_logo img {
+  width: 140px;
+  height: 70px;
+}
+.footer_items img {
+  width: 30px;
+}
+
+.footer_nav ul {
+  padding-left: 0;
+}
+
+.footer_nav li {
+  position: relative;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 5px 0 5px 0;
+  align-items: start;
+}
+
+.footer_nav li::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 1px;
+  width: 0%;
+  left: 0%;
+  bottom: 0px;
+  transition: 0.3s;
+}
+.footer_nav li:hover:after {
+  width: 100%;
+}

@@ -7,7 +7,7 @@ function Header() {
         <a className="header-nav_item" href>
           Мужское{' '}
         </a>
-        <a classNameName="header-nav_item" href>
+        <a className="header-nav_item" href>
           Женское{' '}
         </a>
       </div>
@@ -17,7 +17,7 @@ function Header() {
       </div>
       <div className="header-icon">
         <div className="header-icon_items">
-          <div classNameName="header-icon_item">
+          <div className="header-icon_item">
             <img src="man-svgrepo-com.svg" className="logo" alt="logo" />
             <span> Войти </span>
           </div>

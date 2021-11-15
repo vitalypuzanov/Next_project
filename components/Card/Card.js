@@ -1,29 +1,30 @@
 import React from 'react';
+import Image from 'next/dist/client/image';
+import {useRouter} from 'next/router';
+
 import classes from './Card.module.css';
 
-function Card() {
+function Card(props) {
+  const router = useRouter();
+  const {image, title, description, price} = props.cards;
+
+  const showDetailsHandler = () => {
+    router.push(props.id);
+  };
+
   return (
-    <div className={classes.card}>
-      <div className={classes.card_img}>
-        <img
-          src="https://cdn.aizel.ru/i/1311353.jpg"
-          className={classes.card_img_first}
-          alt=""></img>
-        {/* <img
-          src="https://cdn.aizel.ru/i/1078030.jpg"
-          className={classes.card_img_second}
-          alt=""></img> */}
-      </div>
-      <div className={classes.card_info}>
-        <div className={classes.card_title}>Burberry</div>
-        <div className={classes.card_description}>Темные синие брюки</div>
-        <div className={classes.card_price}>412$</div>
-        <div className={classes.card_size}>
-          <span>S M L Xl </span>
+    <li onClick={showDetailsHandler} className={classes.card}>
+      <a>
+        <div className={classes.card_img}>
+          <Image src={image} alt={title} width={250} height={300} />
         </div>
-      </div>
-    </div>
+        <div className={classes.content}>
+          <h4>{title}</h4>
+          <p>{description}</p>
+          <p>{price}</p>
+        </div>
+      </a>
+    </li>
   );
 }
-
 export default Card;

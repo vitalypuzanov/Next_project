@@ -1,0 +1,23 @@
+.conainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper input {
+  width: 300px;
+  height: 30px;
+}
+
+.info {
+  font-size: 10px;
+}
