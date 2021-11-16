@@ -1,6 +1,7 @@
 import React from 'react';
-import {MongoClient} from 'mongodb';
+
 import СategoriesGrid from '../../components/HomePage/Сategories/СategoriesGrid';
+import {connectToDatabase} from '../../lib/db';
 
 function index(props) {
   return <СategoriesGrid actualdata={props.actualdata}></СategoriesGrid>;
@@ -9,9 +10,7 @@ function index(props) {
 export default index;
 
 export async function getStaticProps() {
-  const client = await MongoClient.connect(
-    'mongodb+srv://vit:qwerty123@cluster0.6sdaa.mongodb.net/main?retryWrites=true&w=majority',
-  );
+  const client = await connectToDatabase();
   const db = client.db();
 
   const mainCollection = db.collection('main');
