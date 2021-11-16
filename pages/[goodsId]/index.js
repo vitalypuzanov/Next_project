@@ -1,5 +1,5 @@
 import React from 'react';
-import CardDetail from '../../components/Carddetail/CardDetail';
+import CardDetail from 'components/Carddetail/CardDetail';
 
 import {ObjectId} from 'mongodb';
 import {connectToDatabase} from '../../lib/db';

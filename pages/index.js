@@ -2,10 +2,10 @@ import Head from 'next/head';
 
 import {Fragment} from 'react';
 
-import Main from '../components/HomePage/Main';
-import СategoriesGrid from '../components/HomePage/Сategories/СategoriesGrid';
-import CardGrid from '../components/Card/CardGrid';
-import ContactForm from '../components/HomePage/Contact/ContactForm';
+import Main from 'components/HomePage/Main';
+import СategoriesGrid from 'components/HomePage/Сategories/СategoriesGrid';
+import CardGrid from 'components/Card/CardGrid';
+import ContactForm from 'components/HomePage/Contact/ContactForm';
 
 import {connectToDatabase} from '../lib/db';
 

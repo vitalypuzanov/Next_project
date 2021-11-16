@@ -1,6 +1,6 @@
 import React from 'react';
 
-import СategoriesGrid from '../../components/HomePage/Сategories/СategoriesGrid';
+import СategoriesGrid from 'components/HomePage/Сategories/СategoriesGrid';
 import {connectToDatabase} from '../../lib/db';
 
 function index(props) {
