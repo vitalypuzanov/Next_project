@@ -1,15 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
-import classes from '../Header/Header.module.css';
+import {useSession, signOut} from 'next-auth/client';
+
 import Nav from '../Navigation/Nav/Nav';
 
+import classes from '../Header/Header.module.css';
+
 const iconData = [
-  {href: '/auth', img: 'man-svgrepo-com.svg', id: '1'},
+  {href: '/profile', img: 'man-svgrepo-com.svg', id: '1'},
   {href: '/auth', img: 'bag-svgrepo-com.svg', id: '2'},
   {href: '/auth', img: 'star-svgrepo-com.svg', id: '3'},
 ];
 
 function Header() {
+  const [session, loading] = useSession();
+
+  function logoutHandler() {
+    signOut();
+  }
+
   return (
     <header>
       <div className={classes.header}>
@@ -30,6 +39,8 @@ function Header() {
         </div>
         <div className={classes.header__icon}>
           <div className={classes.header__icon_items}>
+            {!session && !loading && <Link href="/auth">Войти</Link>}
+            <p onClick={logoutHandler}>Выйти</p>
             <div className={classes.header__icon_item}>
               {iconData.map((iconData) => (
                 <Link key={iconData.id} href={iconData.href}>

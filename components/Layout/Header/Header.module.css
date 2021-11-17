@@ -60,6 +60,7 @@
   justify-content: space-between;
   list-style-type: none;
   cursor: pointer;
+  align-items: center;
 }
 
 .header__icon_items img {
