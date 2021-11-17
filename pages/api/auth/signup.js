@@ -1,11 +1,13 @@
-import {connectToDatabase} from '../../../lib/db';
 import {hashPassword} from '../../../lib/auth';
+import {connectToDatabase} from '../../../lib/db';
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
     return;
   }
+
   const data = req.body;
+
   const {email, password} = data;
 
   if (
@@ -20,6 +22,7 @@ async function handler(req, res) {
     });
     return;
   }
+
   const client = await connectToDatabase();
 
   const db = client.db();
@@ -27,7 +30,7 @@ async function handler(req, res) {
   const existingUser = await db.collection('users').findOne({email: email});
 
   if (existingUser) {
-    res.status(422).json({message: 'User exist already'});
+    res.status(422).json({message: 'User exists already!'});
     client.close();
     return;
   }
@@ -39,7 +42,8 @@ async function handler(req, res) {
     password: hashedPassword,
   });
 
-  res.status(201).json({message: 'Create new'});
+  res.status(201).json({message: 'Created user!'});
   client.close();
 }
+
 export default handler;
