@@ -1,5 +1,5 @@
 import React from 'react';
-import CardGrid from '../../components/Card/CardGrid';
+import CardGrid from 'components/Card/CardGrid';
 import {connectToDatabase} from '../../lib/db';
 
 function goods(props) {

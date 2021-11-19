@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/dist/client/link';
 
-import ContactForm from '../../components/HomePage/Contact/ContactForm';
-import Sidenav from '../../components/Layout/Navigation/Sidenav/Sidenav';
+import ContactForm from 'components/HomePage/Contact/ContactForm';
+import Sidenav from 'components/Layout/Navigation/Sidenav/Sidenav';
 
 import classes from './index.module.css';
 

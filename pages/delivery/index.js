@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidenav from '../../components/Layout/Navigation/Sidenav/Sidenav';
+import Sidenav from '/components/Layout/Navigation/Sidenav/Sidenav';
 import classes from '../delivery/delivery.module.css';
 import {tableData} from './tableData';
 
