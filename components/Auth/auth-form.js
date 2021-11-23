@@ -23,8 +23,10 @@ async function createUser(email, password) {
 }
 
 function AuthForm() {
-  const emailInputRef = useRef();
-  const passwordInputRef = useRef();
+  const [isEmail, setEmail] = useState('');
+  const [isPassword, setPassword] = useState('');
+  // const emailInputRef = useRef();
+  // const passwordInputRef = useRef();
 
   const [isLogin, setIsLogin] = useState(true);
   const router = useRouter();
@@ -36,10 +38,11 @@ function AuthForm() {
   async function submitHandler(event) {
     event.preventDefault();
 
-    const enteredEmail = emailInputRef.current.value;
-    const enteredPassword = passwordInputRef.current.value;
+    const enteredEmail = isEmail;
+    const enteredPassword = isPassword;
 
-    // optional: Add validation
+    // const enteredEmail = emailInputRef.current.value;
+    // const enteredPassword = passwordInputRef.current.value;
 
     if (isLogin) {
       const result = await signIn('credentials', {
@@ -68,15 +71,22 @@ function AuthForm() {
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="email">Вам Email</label>
-          <input type="email" id="email" required ref={emailInputRef} />
+          <input
+            type="email"
+            value={isEmail}
+            onInput={(e) => setEmail(e.target.value)}
+            id="email"
+            required
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="password">Ваш пароль</label>
           <input
+            value={isPassword}
+            onInput={(e) => setPassword(e.target.value)}
             type="password"
             id="password"
             required
-            ref={passwordInputRef}
           />
         </div>
         <div className={classes.actions}>
