@@ -25,8 +25,6 @@ async function createUser(email, password) {
 function AuthForm() {
   const [isEmail, setEmail] = useState('');
   const [isPassword, setPassword] = useState('');
-  // const emailInputRef = useRef();
-  // const passwordInputRef = useRef();
 
   const [isLogin, setIsLogin] = useState(true);
   const router = useRouter();
@@ -41,9 +39,6 @@ function AuthForm() {
     const enteredEmail = isEmail;
     const enteredPassword = isPassword;
 
-    // const enteredEmail = emailInputRef.current.value;
-    // const enteredPassword = passwordInputRef.current.value;
-
     if (isLogin) {
       const result = await signIn('credentials', {
         redirect: false,
@@ -52,7 +47,6 @@ function AuthForm() {
       });
 
       if (!result.error) {
-        // set some auth state
         router.replace('/profile');
       }
     } else {
